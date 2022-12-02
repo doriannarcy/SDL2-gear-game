@@ -65,6 +65,15 @@ void Window::render(const Entity& p_entity)
     SDL_RenderCopy(renderer, p_entity.getTexture(), &src, &dst);
 }
 
+void Window::setBackgroundColor(Color p_backgroundColor)
+{
+    SDL_SetRenderDrawColor(renderer, p_backgroundColor.redIntensity,
+        p_backgroundColor.greenIntensity, p_backgroundColor.blueIntensity, SDL_ALPHA_OPAQUE);
+
+
+    SDL_RenderFillRect(renderer, NULL);
+}
+
 void Window::setCameraPosition(Vector2f p_position)
 {
     cameraPosition = p_position;

@@ -6,7 +6,7 @@
 #include "Entity.hpp"
 #include "World.hpp"
 
-const float timeStep (0.01f);
+const float timeStep (0.01f); // 100 fps => 1/100 seconds between frames
 
 int main (int argc, char* argv[])
 {
@@ -27,7 +27,8 @@ int main (int argc, char* argv[])
     window->setCameraPosition(Vector2f(0.0f, 0.0f));
 
     //* World Creation
-    World world;
+    Color backgroundColor(255, 0, 0);
+    World world(backgroundColor);
     SDL_Texture* t = window->loadTexture("res/gfx/man.png");
     world.addEntity( Entity( Vector2f(10, 20), t ) );
 

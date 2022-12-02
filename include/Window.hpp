@@ -18,6 +18,7 @@ class Window
     void clear();
     void display();
     void render(const Entity& p_entity);
+    void setBackgroundColor(Color p_backgroundColor);
     void setCameraPosition(Vector2f p_position);
 
     private:
