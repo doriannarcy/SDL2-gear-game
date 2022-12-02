@@ -1,0 +1,17 @@
+- Monde 2d : axe horizontal et vertical (comme Terraria)
+- Sources d'énergie : éoliennes, géothermie, solaire, barrages ...
+- partir au niveau du sol (pillers pour maintenir)
+- sortes de supports volants qui demandent de l'énergie
+	-> range maximum justifiable par la pression insuffisante
+- tapis roulants / ascenceurs < tubes < téléportation
+- craft dans des machines -> construire d'autres machines
+- buts :
+	-> aller dans l'espace ?
+	-> se protéger d'ennemis (forteresse)
+	-> conquérir le monde ? l'univers ?
+	-> plusieurs planètes pour différents niveaux (avec des particularités : ex pas vent mais plus de soleil)
+	-> défis dans le monde
+	-> achievements
+	-> boss dans chaque monde
+	-> les mondes continuent de générer des ressources (pas de niveaux indépendants)
+	-> 
