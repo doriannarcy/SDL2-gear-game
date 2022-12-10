@@ -27,10 +27,12 @@ int main (int argc, char* argv[])
     window->setCameraPosition(Vector2f(0.0f, 0.0f));
 
     //* World Creation
-    Color backgroundColor(255, 0, 0);
+    Color backgroundColor(135, 206, 235);
     World world(backgroundColor);
     SDL_Texture* t = window->loadTexture("res/gfx/man.png");
-    world.addEntity( Entity( Vector2f(10, 20), t ) );
+
+    Entity* man = new Entity( Vector2f(10, 20), t );
+    world.addEntity(man);
 
     //* Game Loop Setup
     bool gameRunning (true);
@@ -57,13 +59,32 @@ int main (int argc, char* argv[])
                     gameRunning = false;
                 }
 
-                if (event.type == SDL_KEYDOWN)
+                else if (event.type == SDL_KEYDOWN)
                 {
                     switch (event.key.keysym.sym)
                     {
                         case SDLK_ESCAPE:
                             gameRunning = false;
                             break;
+
+                        case SDLK_d:
+                            std::cout << "Moving left" << std::endl;
+                            man->move(Vector2f(20, 0));
+                            break;
+                    }
+                }
+
+                else if (event.type == SDL_MOUSEWHEEL)
+                {
+                    if (event.wheel.y > 0) // scroll up
+                    {
+                        std::cout << "Zooming in" << std::endl;
+                        window->incrementZoomLevel();
+                    }
+                    else if (event.wheel.y < 0) // scroll down
+                    {
+                        std::cout << "Zooming out" << std::endl;
+                        window->decrementZoomLevel();
                     }
                 }
             }

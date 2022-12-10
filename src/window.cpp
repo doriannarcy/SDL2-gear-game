@@ -57,8 +57,8 @@ void Window::render(const Entity& p_entity)
     src.h = p_entity.getCurrentFrame().h;
 
     SDL_Rect dst;
-    dst.x = p_entity.getPosition().x - cameraPosition.x;
-    dst.y = p_entity.getPosition().y - cameraPosition.y;
+    dst.x = (p_entity.getPosition().x - cameraPosition.x) * zoomLevel;
+    dst.y = (p_entity.getPosition().y - cameraPosition.y) *zoomLevel;
     dst.w = p_entity.getCurrentFrame().w * zoomLevel;
     dst.h = p_entity.getCurrentFrame().h * zoomLevel;
 
@@ -77,4 +77,17 @@ void Window::setBackgroundColor(Color p_backgroundColor)
 void Window::setCameraPosition(Vector2f p_position)
 {
     cameraPosition = p_position;
+}
+
+void Window::incrementZoomLevel()
+{
+    zoomLevel++;
+}
+
+void Window::decrementZoomLevel()
+{
+    if (zoomLevel > 1)
+    {
+        zoomLevel--;
+    }
 }

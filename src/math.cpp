@@ -19,6 +19,19 @@ void Vector2f::print()
     std::cout << "Vector2f(" << x << "; " << y << ")" << std::endl;
 }
 
+Vector2f& Vector2f::operator+= (Vector2f const& other)
+{
+    x += other.x;
+    y += other.y;
+
+    return *this;
+}
+
+Vector2f operator+ (Vector2f const& term1, Vector2f const& term2)
+{
+    const Vector2f result (term1.x + term2.x, term1.y + term2.y);
+    return result;
+}
 
 Color::Color()
     : redIntensity(0), greenIntensity(0), blueIntensity(0)

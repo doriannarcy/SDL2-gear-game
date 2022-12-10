@@ -14,6 +14,8 @@ class Entity
     SDL_Rect getCurrentFrame() const;
     SDL_Texture* getTexture() const;
 
+    void move(Vector2f movement);
+
     private:
 
     Vector2f position;

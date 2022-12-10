@@ -34,3 +34,7 @@ SDL_Texture* Entity::getTexture() const
     return texture;
 }
 
+void Entity::move(Vector2f movement)
+{
+    position += movement;
+}

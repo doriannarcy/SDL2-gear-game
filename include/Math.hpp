@@ -9,8 +9,12 @@ struct Vector2f
 
     void print();
 
+    Vector2f& operator+= (Vector2f const& other);
+
     float x, y;
 };
+
+Vector2f operator+ (Vector2f const& term1, Vector2f const& term2);
 
 struct Color
 {

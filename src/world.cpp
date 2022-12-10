@@ -16,7 +16,7 @@ World::World(Color p_backgroundColor)
 
 }
 
-void World::addEntity(Entity p_entity)
+void World::addEntity(Entity* p_entity)
 {
     entities.push_back(p_entity);
 }
@@ -24,8 +24,8 @@ void World::addEntity(Entity p_entity)
 void World::render(Window* p_window)
 {
     p_window->setBackgroundColor(backgroundColor);
-    for (Entity entity : entities)
+    for (Entity* entity : entities)
     {
-        p_window->render(entity);
+        p_window->render(*entity);
     }
 }
